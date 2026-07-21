@@ -1,3 +1,5 @@
+![OpenG7 Platform](docs/assets/openg7-model-gateway.png)
+
 # OpenG7 Model Gateway
 
 Secure, provider-neutral routing, governance and observability layer for AI models used across OpenG7.
