@@ -4,6 +4,12 @@
 
 Secure, provider-neutral routing, governance and observability layer for AI models used across OpenG7.
 
+> **Implementation status:** specification and governance only. Application workspaces,
+> package manifests, Docker launch files and production checklists described below
+> are planned, not present. Currently available validation:
+> `node scripts/check-project-standards.mjs`. Read [AGENTS.md](AGENTS.md)
+> and the [project architecture](docs/ARCHITECTURE.md) for the applicable scope.
+
 ## Workspace architecture
 
 Target workspace architecture:
@@ -106,7 +112,6 @@ yarn docs
 ```
 
 Commands may evolve with the implementation, but CI should preserve equivalent lint, test, build, and documentation gates.
-
 
 ## Production launch
 

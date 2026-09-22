@@ -1,13 +1,3 @@
-# OpenG7 Model Gateway — consignes
-
-## Mission
-
-Router les inférences OpenG7 avec gouvernance, quotas et observabilité, indépendamment du fournisseur.
-Dépôt de cadrage : aucun workspace applicatif ni manifest racine actuellement.
-Les APIs, dossiers et commandes du README sont des cibles à implémenter.
-
-<!-- openg7:common:start -->
-
 ## Socle commun OpenG7
 
 <!-- openg7-standard: 1 -->
@@ -38,35 +28,3 @@ Les APIs, dossiers et commandes du README sont des cibles à implémenter.
   effective ou un risque métier; elles ne recopient pas le socle.
 - Terminer par le diff, les contrôles applicables et `git diff --check`. Rapporter
   résultat, validations exécutées, limites et opérations restantes, sans faux succès.
-
-<!-- openg7:common:end -->
-
-## Périmètre local
-
-Le gateway possède routes, adaptateurs fournisseurs et minimisation des requêtes. Il ne stocke pas la mémoire canonique et n’orchestre pas les tâches métier des agents.
-
-- Résoudre une capacité ou un alias versionné selon classification, résidence, approbation, contexte, qualité, disponibilité, latence et budget.
-- Privilégier une route locale ou juridiquement approuvée. Un fournisseur indisponible n’autorise jamais un fallback externe de données protégées; refuser si aucune route admissible.
-- Chaque adaptateur déclare capacités, localisation, rétention/entraînement, authentification, limites, streaming/outils, santé et champs de coût/audit.
-- Garder SDK et credentials fournisseurs dans les adaptateurs serveur. Minimiser/rédiger prompts, sorties et logs selon leur classification.
-- Appliquer quotas, délais, annulation et retries bornés; tracer route/version, tokens, coût, latence et refus. Les autorisations restent actives pendant les fallbacks.
-
-## Lectures selon la tâche
-
-<!-- prettier-ignore -->
-| Déclencheur | Référence |
-| --- | --- |
-| Frontière, nouveau module, dépendance | [Architecture](docs/ARCHITECTURE.md) |
-| classification, routes, fournisseurs, fallbacks, quotas et observabilité | Section correspondante du [README](README.md) |
-| Révision des consignes | [Standard](docs/standards/README.md) |
-
-## Validation
-
-Documentation/gouvernance : `node scripts/check-project-standards.mjs` et
-`git diff --check`. Pour du code, lire le manifest et la CI concernés; ne pas
-annoncer un lint, test ou build absent comme exécuté.
-
-## Maintenance
-
-Pour changer les consignes : [standard et budgets](docs/standards/README.md).
-Conserver le bloc commun synchronisé et les différences dans leur périmètre.
